@@ -13,7 +13,7 @@ class ActivityScreen extends StatelessWidget {
       shrinkWrap: true,
       physics: const ScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 5 / 3,
+          childAspectRatio: 11 / 5,
           crossAxisCount: 4,
           crossAxisSpacing: 0,
           mainAxisSpacing: 0.0),
@@ -45,22 +45,22 @@ class ActivityScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Text(
-              activities.activityData[index].value,
-              style: const TextStyle(color: Colors.white),
-            ),
+            Column(
+              children: [
+                Container(
+                  height: 50,
+                  color: Colors.red,
+                  child: const Text("Diagramme"),
+                ),
+                Text(
+                  activities.activityData[index].value,
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ],
+            )
           ],
         ),
       ),
-    );
-  }
-
-  Widget CustomCard() {
-    return Container(
-      margin: const EdgeInsets.all(15),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8), color: kPrimaryColor),
-      child: const Text("Avc azazzzzaaaa"),
     );
   }
 }

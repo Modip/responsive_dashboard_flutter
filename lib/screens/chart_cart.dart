@@ -9,18 +9,25 @@ class ChartCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final data = LineData();
+    double width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          "Revenu Genereted",
-          style: TextStyle(color: Colors.white),
+        Padding(
+          padding: const EdgeInsets.only(left: 12.0, top: 8),
+          child: Text(
+            "Revenu Genereted",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: width * .01,
+            ),
+          ),
         ),
         const SizedBox(
           height: 5,
         ),
         AspectRatio(
-          aspectRatio: 10 / 2,
+          aspectRatio: 8 / 2,
           child: LineChart(
             LineChartData(
                 lineTouchData: LineTouchData(handleBuiltInTouches: true),
@@ -34,15 +41,16 @@ class ChartCard extends StatelessWidget {
                   ),
                   bottomTitles: AxisTitles(
                     sideTitles: SideTitles(
-                        // showTitles: true,
                         getTitlesWidget: (double value, TitleMeta meta) {
                           return data.bottomTile[value.toInt()] != null
                               ? SideTitleWidget(
                                   axisSide: meta.axisSide,
                                   child: Text(
                                     data.bottomTile[value.toInt()].toString(),
-                                    style: const TextStyle(color: Colors.white),
-                                  ))
+                                    style: const TextStyle(
+                                        color: Colors.white, fontSize: 10),
+                                  ),
+                                )
                               : const SizedBox();
                         },
                         reservedSize: 40,
@@ -57,7 +65,8 @@ class ChartCard extends StatelessWidget {
                                   axisSide: meta.axisSide,
                                   child: Text(
                                     data.leftTile[value.toInt()].toString(),
-                                    style: const TextStyle(color: Colors.white),
+                                    style: const TextStyle(
+                                        color: Colors.white, fontSize: 10),
                                   ))
                               : const SizedBox();
                         },
@@ -85,8 +94,8 @@ class ChartCard extends StatelessWidget {
                 ],
                 minX: 0,
                 maxX: 120,
-                maxY: 105,
-                minY: -5),
+                maxY: 120,
+                minY: -15),
           ),
         ),
       ],

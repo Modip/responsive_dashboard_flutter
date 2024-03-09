@@ -1,18 +1,21 @@
 import 'package:dashbord/constant/constant.dart';
 import 'package:flutter/material.dart';
 
-class HeaderSceen extends StatelessWidget {
-  const HeaderSceen({super.key});
+class HeaderScreen extends StatelessWidget {
+  const HeaderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: 150,
+              width: width * .12,
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14),
@@ -29,15 +32,15 @@ class HeaderSceen extends StatelessWidget {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Colors.black),
+                        borderSide: const BorderSide(color: Colors.white),
                       ),
                       contentPadding: const EdgeInsets.symmetric(
                           vertical: 5, horizontal: 5),
                       hintText: "Search",
-                      hintStyle: const TextStyle(color: Colors.grey),
+                      hintStyle: const TextStyle(color: Colors.white),
                       suffixIcon: const Icon(
                         Icons.search_outlined,
-                        color: Colors.grey,
+                        color: Colors.white,
                         size: 20,
                       ))),
             ),
@@ -50,7 +53,7 @@ class HeaderSceen extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.dark_mode_outlined,
-                        color: Colors.grey,
+                        color: Colors.white,
                         size: 20,
                       ),
                       SizedBox(
@@ -58,7 +61,7 @@ class HeaderSceen extends StatelessWidget {
                       ),
                       Icon(
                         Icons.notification_add_outlined,
-                        color: Colors.grey,
+                        color: Colors.white,
                         size: 20,
                       ),
                     ],
@@ -69,19 +72,25 @@ class HeaderSceen extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "DASHBOARD",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600),
+                Padding(
+                  padding: EdgeInsets.only(left: 14.0),
+                  child: Text(
+                    "DASHBOARD",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: width * .012,
+                        fontWeight: FontWeight.w600),
+                  ),
                 ),
-                Text(
-                  "Welcome to your dashboard",
-                  style: TextStyle(color: kGreenColor, fontSize: 10),
+                Padding(
+                  padding: EdgeInsets.only(left: 14.0),
+                  child: Text(
+                    "Welcome to your dashboard",
+                    style: TextStyle(color: kGreenColor, fontSize: 10),
+                  ),
                 ),
               ],
             ),

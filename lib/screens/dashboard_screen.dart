@@ -1,6 +1,7 @@
 import 'package:dashbord/screens/activity_screen.dart';
-import 'package:dashbord/screens/chart_cart.dart';
+import 'package:dashbord/screens/footer_screen.dart';
 import 'package:dashbord/screens/header_screen.dart';
+import 'package:dashbord/screens/midle_screen.dart';
 import 'package:flutter/material.dart';
 
 class DashBoardScreen extends StatelessWidget {
@@ -11,18 +12,19 @@ class DashBoardScreen extends StatelessWidget {
     return const SingleChildScrollView(
       child: Column(
         children: [
+          HeaderScreen(),
           SizedBox(
-            height: 12,
-          ),
-          HeaderSceen(),
-          SizedBox(
-            height: 12,
+            height: 5,
           ),
           ActivityScreen(),
           SizedBox(
-            height: 12,
+            height: 5,
           ),
-          ChartCard(),
+          MiddleScreen(),
+          SizedBox(
+            height: 5,
+          ),
+          FooterScreen(),
         ],
       ),
     );
