@@ -16,6 +16,7 @@ class HeaderScreen extends StatelessWidget {
           children: [
             Container(
               width: width * .12,
+              height: height * .078,
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14),
@@ -76,7 +77,7 @@ class HeaderScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 14.0),
+                  padding: const EdgeInsets.only(left: 14.0),
                   child: Text(
                     "DASHBOARD",
                     style: TextStyle(
@@ -85,7 +86,7 @@ class HeaderScreen extends StatelessWidget {
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(left: 14.0),
                   child: Text(
                     "Welcome to your dashboard",
@@ -95,6 +96,7 @@ class HeaderScreen extends StatelessWidget {
               ],
             ),
             Container(
+              height: height * .06,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12), color: kPinkColor),
               padding: const EdgeInsets.all(5),

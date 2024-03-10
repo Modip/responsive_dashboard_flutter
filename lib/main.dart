@@ -1,3 +1,4 @@
+import 'package:dashbord/constant/constant.dart';
 import 'package:dashbord/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Dasboard',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: kBackgroundColor,
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,

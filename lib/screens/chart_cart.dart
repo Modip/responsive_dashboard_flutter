@@ -23,11 +23,8 @@ class ChartCard extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(
-          height: 5,
-        ),
         AspectRatio(
-          aspectRatio: 8 / 2,
+          aspectRatio: 4.5,
           child: LineChart(
             LineChartData(
                 lineTouchData: LineTouchData(handleBuiltInTouches: true),

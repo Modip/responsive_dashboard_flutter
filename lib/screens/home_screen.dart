@@ -9,12 +9,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: kBackgroundColor,
       body: SafeArea(
         child: Row(
           children: [
             Expanded(
-              flex: 2,
+              flex: 1,
               child: SideMenu(),
             ),
             Expanded(flex: 7, child: DashBoardScreen()),

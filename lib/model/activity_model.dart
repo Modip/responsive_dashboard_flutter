@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
 
 class ActivityModel {
-  final IconData icon;
+  final String date;
   final String value;
   final String title;
 
   const ActivityModel(
-      {required this.icon, required this.value, required this.title});
+      {required this.date, required this.value, required this.title});
 }

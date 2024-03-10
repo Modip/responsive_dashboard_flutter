@@ -118,7 +118,7 @@ class FooterScreen extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: height * 0.035,
+                  top: height * 0.05,
                   left: width * 0.01,
                   right: width * 0.01,
                   child: const MapScreen(),
