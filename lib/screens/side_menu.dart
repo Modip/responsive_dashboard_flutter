@@ -39,23 +39,23 @@ class _SideMenuState extends State<SideMenu> {
             const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Modip",
-              style: TextStyle(fontSize: width * .013, color: Colors.white),
+              style: TextStyle(fontSize: 14, color: Colors.white),
             ),
-            Text(
+            const Text(
               "Flutter Developer",
               style: TextStyle(
                 color: kGreenColor,
-                fontSize: width * .01,
+                fontSize: 12,
               ),
             ),
             const SizedBox(
               height: 20,
             ),
             Container(
-                height: height * .25,
-                width: width * .15,
+                height: height * .3,
+                width: width * .2,
                 child: ListView.builder(
                     itemCount: data.menu.length,
                     itemBuilder: (context, index) => buildMenu(data, index))),
@@ -84,6 +84,7 @@ class _SideMenuState extends State<SideMenu> {
               child: Icon(
                 data.menu[index].icon,
                 color: Colors.white,
+                size: 18,
               ),
             ),
             Text(

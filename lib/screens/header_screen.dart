@@ -1,4 +1,5 @@
 import 'package:dashbord/constant/constant.dart';
+import 'package:dashbord/util/responsive.dart';
 import 'package:flutter/material.dart';
 
 class HeaderScreen extends StatelessWidget {
@@ -14,36 +15,73 @@ class HeaderScreen extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              width: width * .12,
-              height: height * .078,
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: TextField(
-                  decoration: InputDecoration(
-                      filled: true,
-                      fillColor: kPrimaryColor,
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.transparent),
+            Row(
+              children: [
+                if (!Responsive.isDesktop(context))
+                  Padding(
+                    padding: const EdgeInsets.only(left: 4.0),
+                    child: InkWell(
+                      onTap: () => Scaffold.of(context).openDrawer(),
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 8.0),
+                        child: Icon(
+                          Icons.menu,
+                          color: Colors.white,
+                          size: 25,
+                        ),
                       ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                if (!Responsive.isMobile(context))
+                  Container(
+                    width: width * .12,
+                    height: height * .078,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: kPrimaryColor,
+                        enabledBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.transparent),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(color: Colors.white),
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 5, horizontal: 5),
+                        hintText: "Search",
+                        hintStyle: const TextStyle(color: Colors.white),
+                        suffixIcon: const Icon(
+                          Icons.search_outlined,
+                          color: Colors.white,
+                          size: 20,
+                        ),
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Colors.white),
+                    ),
+                  ),
+                if (Responsive.isMobile(context))
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: InkWell(
+                      onTap: () {},
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 8.0),
+                        child: Icon(
+                          Icons.search_outlined,
+                          color: Colors.white,
+                          size: 25,
+                        ),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(
-                          vertical: 5, horizontal: 5),
-                      hintText: "Search",
-                      hintStyle: const TextStyle(color: Colors.white),
-                      suffixIcon: const Icon(
-                        Icons.search_outlined,
-                        color: Colors.white,
-                        size: 20,
-                      ))),
+                    ),
+                  ),
+              ],
             ),
             Container(
                 padding: const EdgeInsets.all(10),
@@ -73,20 +111,23 @@ class HeaderScreen extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 14.0),
+                  padding: EdgeInsets.only(left: 14.0),
                   child: Text(
                     "DASHBOARD",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: width * .012,
+                        fontSize: 14,
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-                const Padding(
+                SizedBox(
+                  height: 5,
+                ),
+                Padding(
                   padding: EdgeInsets.only(left: 14.0),
                   child: Text(
                     "Welcome to your dashboard",
@@ -95,32 +136,45 @@ class HeaderScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              height: height * .06,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12), color: kPinkColor),
-              padding: const EdgeInsets.all(5),
-              margin: const EdgeInsets.only(right: 20),
-              child: TextButton(
-                onPressed: () {},
-                child: const Row(
-                  children: [
-                    Icon(
-                      Icons.download_outlined,
-                      color: Colors.white,
-                      size: 20,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      "DOWNLOAD REPORT",
-                      style: TextStyle(color: Colors.white, fontSize: 12),
-                    )
-                  ],
+            if (!Responsive.isMobile(context))
+              Container(
+                height: height * .06,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12), color: kPinkColor),
+                padding: const EdgeInsets.all(5),
+                margin: const EdgeInsets.only(right: 20),
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Row(
+                    children: [
+                      Icon(
+                        Icons.download_outlined,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "DOWNLOAD REPORT",
+                        style: TextStyle(color: Colors.white, fontSize: 12),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
+            if (Responsive.isMobile(context))
+              InkWell(
+                onTap: () {},
+                child: const Padding(
+                  padding: EdgeInsets.only(right: 10.0),
+                  child: Icon(
+                    Icons.download_outlined,
+                    color: kGreenColor,
+                    size: 25,
+                  ),
+                ),
+              ),
           ],
         ),
       ],

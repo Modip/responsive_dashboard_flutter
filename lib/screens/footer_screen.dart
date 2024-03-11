@@ -2,6 +2,7 @@ import 'package:dashbord/constant/constant.dart';
 import 'package:dashbord/screens/bar_screen.dart';
 import 'package:dashbord/screens/chart.dart';
 import 'package:dashbord/screens/map_screen.dart';
+import 'package:dashbord/util/responsive.dart';
 import 'package:flutter/material.dart';
 
 class FooterScreen extends StatelessWidget {
@@ -15,8 +16,9 @@ class FooterScreen extends StatelessWidget {
     return GridView(
         shrinkWrap: true,
         physics: const ScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, childAspectRatio: 9 / 5),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: Responsive.isMobile(context) ? 1 : 3,
+            childAspectRatio: Responsive.isMobile(context) ? 8 / 3 : 9 / 5),
         children: [
           Container(
             margin: const EdgeInsets.all(15),
@@ -29,11 +31,11 @@ class FooterScreen extends StatelessWidget {
                 Positioned(
                   top: height * 0.015,
                   left: width * 0.015,
-                  child: Text(
+                  child: const Text(
                     "Compaign",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: width * .01,
+                      fontSize: 14,
                     ),
                   ),
                 ),
@@ -41,27 +43,27 @@ class FooterScreen extends StatelessWidget {
                   top: height * 0.09,
                   left: width * 0.01,
                   right: width * 0.01,
-                  child: Column(
+                  child: const Column(
                     children: [
-                      const Chart(),
-                      const SizedBox(
+                      Chart(),
+                      SizedBox(
                         height: 40,
                       ),
                       Text(
                         "\$99.345 Genereted",
                         style: TextStyle(
                           color: kGreenColor,
-                          fontSize: width * .008,
+                          fontSize: 12,
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 5,
                       ),
                       Text(
                         "Include extra musc and expendatables costs",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: width * .008,
+                          fontSize: 12,
                         ),
                       ),
                     ],
@@ -81,11 +83,11 @@ class FooterScreen extends StatelessWidget {
                 Positioned(
                   top: height * 0.015,
                   left: width * 0.015,
-                  child: Text(
+                  child: const Text(
                     "Sales Quantities",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: width * .01,
+                      fontSize: 14,
                     ),
                   ),
                 ),
@@ -109,11 +111,11 @@ class FooterScreen extends StatelessWidget {
                 Positioned(
                   top: height * 0.015,
                   left: width * 0.015,
-                  child: Text(
+                  child: const Text(
                     "Geography Based Traffic ",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: width * .01,
+                      fontSize: 14,
                     ),
                   ),
                 ),

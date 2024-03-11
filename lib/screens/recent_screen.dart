@@ -7,7 +7,6 @@ class RecentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
     return Container(
@@ -26,26 +25,26 @@ class RecentScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 activity.title,
-                style: TextStyle(
+                style: const TextStyle(
                   color: kGreenColor,
-                  fontSize: width * .008,
+                  fontSize: 12,
                 ),
               ),
             ),
             Text(
               activity.date,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
-                fontSize: width * .008,
+                fontSize: 12,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 activity.value,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
-                  fontSize: width * .008,
+                  fontSize: 12,
                 ),
               ),
             ),
