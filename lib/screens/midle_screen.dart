@@ -21,7 +21,7 @@ class MiddleScreen extends StatelessWidget {
                 height: height * .45,
                 width: width,
                 decoration: BoxDecoration(
-                    color: kPrimaryColor,
+                    color: Theme.of(context).colorScheme.primary,
                     borderRadius: BorderRadius.circular(8)),
                 margin: const EdgeInsets.only(left: 15, right: 15),
                 child: const ChartCard(),
@@ -34,27 +34,27 @@ class MiddleScreen extends StatelessWidget {
                 width: width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: kPrimaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 margin: const EdgeInsets.only(left: 15, right: 15),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      const Row(
+                      Row(
                         children: [
                           Padding(
-                            padding: EdgeInsets.all(12),
+                            padding: const EdgeInsets.all(12),
                             child: Text(
                               "Recent Transactions",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.white),
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color:
+                                      Theme.of(context).colorScheme.tertiary),
                             ),
                           )
                         ],
                       ),
-                      Container(
-                        //  width: width * .28,
-                        color: kBackgroundColor,
+                      SizedBox(
                         child: Scrollbar(
                           trackVisibility: true,
                           thickness: 50,
@@ -82,7 +82,7 @@ class MiddleScreen extends StatelessWidget {
                 height: height * .34,
                 width: width * .56,
                 decoration: BoxDecoration(
-                    color: kPrimaryColor,
+                    color: Theme.of(context).colorScheme.primary,
                     borderRadius: BorderRadius.circular(8)),
                 margin: const EdgeInsets.only(left: 15),
                 child: const ChartCard(),
@@ -95,7 +95,7 @@ class MiddleScreen extends StatelessWidget {
                 width: Responsive.isTablet(context) ? width * .38 : width * .27,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: kPrimaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 margin: const EdgeInsets.only(
                   left: 15,
@@ -110,7 +110,9 @@ class MiddleScreen extends StatelessWidget {
                             child: Text(
                               "Recent Transactions",
                               style: TextStyle(
-                                  fontSize: width * .01, color: Colors.white),
+                                  fontSize: width * .01,
+                                  color:
+                                      Theme.of(context).colorScheme.tertiary),
                             ),
                           )
                         ],

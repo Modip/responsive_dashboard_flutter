@@ -18,7 +18,7 @@ class _SideMenuState extends State<SideMenu> {
 
     final data = SideMenuData();
     return Container(
-        color: kPrimaryColor,
+        color: Theme.of(context).colorScheme.primary,
         padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
         child: Column(
           children: [
@@ -30,7 +30,7 @@ class _SideMenuState extends State<SideMenu> {
               width: 60,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: kBackgroundColor,
+                color: kWhiteColor,
                 image: const DecorationImage(
                     image: AssetImage("assets/img/modip1.png"),
                     fit: BoxFit.cover),
@@ -39,9 +39,10 @@ class _SideMenuState extends State<SideMenu> {
             const SizedBox(
               height: 10,
             ),
-            const Text(
+            Text(
               "Modip",
-              style: TextStyle(fontSize: 14, color: Colors.white),
+              style: TextStyle(
+                  fontSize: 14, color: Theme.of(context).colorScheme.tertiary),
             ),
             const Text(
               "Flutter Developer",
@@ -53,7 +54,7 @@ class _SideMenuState extends State<SideMenu> {
             const SizedBox(
               height: 20,
             ),
-            Container(
+            SizedBox(
                 height: height * .3,
                 width: width * .2,
                 child: ListView.builder(
@@ -83,15 +84,15 @@ class _SideMenuState extends State<SideMenu> {
               padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 5),
               child: Icon(
                 data.menu[index].icon,
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.tertiary,
                 size: 18,
               ),
             ),
             Text(
               data.menu[index].title,
-              style: const TextStyle(
+              style: TextStyle(
                   fontSize: 12,
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.tertiary,
                   fontWeight: FontWeight.normal),
             )
           ],

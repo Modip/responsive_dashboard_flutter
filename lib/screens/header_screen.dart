@@ -1,6 +1,8 @@
 import 'package:dashbord/constant/constant.dart';
+import 'package:dashbord/theme/theme_provider.dart';
 import 'package:dashbord/util/responsive.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HeaderScreen extends StatelessWidget {
   const HeaderScreen({super.key});
@@ -22,11 +24,11 @@ class HeaderScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 4.0),
                     child: InkWell(
                       onTap: () => Scaffold.of(context).openDrawer(),
-                      child: const Padding(
-                        padding: EdgeInsets.only(left: 8.0),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
                         child: Icon(
                           Icons.menu,
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.tertiary,
                           size: 25,
                         ),
                       ),
@@ -43,7 +45,7 @@ class HeaderScreen extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: kPrimaryColor,
+                        fillColor: Theme.of(context).colorScheme.primary,
                         enabledBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.transparent),
                         ),
@@ -52,15 +54,17 @@ class HeaderScreen extends StatelessWidget {
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: const BorderSide(color: Colors.white),
+                          borderSide: BorderSide(
+                              color: Theme.of(context).colorScheme.tertiary),
                         ),
                         contentPadding: const EdgeInsets.symmetric(
                             vertical: 5, horizontal: 5),
                         hintText: "Search",
-                        hintStyle: const TextStyle(color: Colors.white),
-                        suffixIcon: const Icon(
+                        hintStyle: TextStyle(
+                            color: Theme.of(context).colorScheme.tertiary),
+                        suffixIcon: Icon(
                           Icons.search_outlined,
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.tertiary,
                           size: 20,
                         ),
                       ),
@@ -71,11 +75,11 @@ class HeaderScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 10.0),
                     child: InkWell(
                       onTap: () {},
-                      child: const Padding(
-                        padding: EdgeInsets.only(left: 8.0),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
                         child: Icon(
                           Icons.search_outlined,
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.tertiary,
                           size: 25,
                         ),
                       ),
@@ -85,22 +89,27 @@ class HeaderScreen extends StatelessWidget {
             ),
             Container(
                 padding: const EdgeInsets.all(10),
-                child: const Align(
+                child: Align(
                   alignment: Alignment.centerLeft,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Icon(
-                        Icons.dark_mode_outlined,
-                        color: Colors.white,
-                        size: 20,
-                      ),
-                      SizedBox(
+                      InkWell(
+                          onTap: () {
+                            Provider.of<ThemeProvider>(context, listen: false)
+                                .toggleTheme();
+                          },
+                          child: Icon(
+                            Icons.dark_mode_outlined,
+                            color: Theme.of(context).colorScheme.tertiary,
+                            size: 20,
+                          )),
+                      const SizedBox(
                         width: 20,
                       ),
                       Icon(
                         Icons.notification_add_outlined,
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.tertiary,
                         size: 20,
                       ),
                     ],
@@ -111,23 +120,23 @@ class HeaderScreen extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 14.0),
+                  padding: const EdgeInsets.only(left: 14.0),
                   child: Text(
                     "DASHBOARD",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.tertiary,
                         fontSize: 14,
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(left: 14.0),
                   child: Text(
                     "Welcome to your dashboard",

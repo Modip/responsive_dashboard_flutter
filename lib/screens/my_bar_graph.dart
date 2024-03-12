@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class MyBarGraph extends StatelessWidget {
   final List weeklySummary;
-  MyBarGraph({super.key, required this.weeklySummary});
+  const MyBarGraph({super.key, required this.weeklySummary});
 
   @override
   Widget build(BuildContext context) {
@@ -113,5 +113,5 @@ Widget getBottomTitles(double value, TitleMeta meta) {
       break;
   }
 
-  return SideTitleWidget(child: text, axisSide: meta.axisSide);
+  return SideTitleWidget(axisSide: meta.axisSide, child: text);
 }

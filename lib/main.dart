@@ -1,23 +1,21 @@
-import 'package:dashbord/constant/constant.dart';
 import 'package:dashbord/screens/home_screen.dart';
+import 'package:dashbord/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => ThemeProvider(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  // This widget is the root of your application.
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Dasboard',
-      theme: ThemeData(
-        scaffoldBackgroundColor: kBackgroundColor,
-        useMaterial3: true,
-      ),
+      title: 'Dashboard',
+      theme: Provider.of<ThemeProvider>(context).themeData,
       debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
     );

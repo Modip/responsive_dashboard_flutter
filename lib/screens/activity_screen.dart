@@ -24,13 +24,13 @@ class ActivityScreen extends StatelessWidget {
             margin: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: kPrimaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
             child: Stack(
               children: [
                 Positioned(
                   top: Responsive.isMobile(context)
-                      ? height * 0.015
+                      ? height * 0.005
                       : height * .03,
                   left: width * 0.015,
                   child: Column(
@@ -43,10 +43,10 @@ class ActivityScreen extends StatelessWidget {
                       SizedBox(
                         height: Responsive.isTablet(context) ? 1 : 5,
                       ),
-                      const Text(
+                      Text(
                         "12,344",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.tertiary,
                           fontSize: 12,
                         ),
                       ),
@@ -90,13 +90,13 @@ class ActivityScreen extends StatelessWidget {
             margin: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: kPrimaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
             child: Stack(
               children: [
                 Positioned(
                   top: Responsive.isMobile(context)
-                      ? height * 0.015
+                      ? height * 0.005
                       : height * .03,
                   left: width * 0.015,
                   child: Column(
@@ -109,10 +109,10 @@ class ActivityScreen extends StatelessWidget {
                       SizedBox(
                         height: Responsive.isTablet(context) ? 1 : 5,
                       ),
-                      const Text(
+                      Text(
                         "32,948",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.tertiary,
                           fontSize: 12,
                         ),
                       ),
@@ -158,13 +158,13 @@ class ActivityScreen extends StatelessWidget {
             margin: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: kPrimaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
             child: Stack(
               children: [
                 Positioned(
                   top: Responsive.isMobile(context)
-                      ? height * 0.015
+                      ? height * 0.005
                       : height * .03,
                   left: width * 0.015,
                   child: Column(
@@ -177,10 +177,10 @@ class ActivityScreen extends StatelessWidget {
                       SizedBox(
                         height: Responsive.isTablet(context) ? 1 : 5,
                       ),
-                      const Text(
+                      Text(
                         "412,344",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.tertiary,
                           fontSize: 12,
                         ),
                       ),
@@ -224,13 +224,13 @@ class ActivityScreen extends StatelessWidget {
             margin: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: kPrimaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
             child: Stack(
               children: [
                 Positioned(
                   top: Responsive.isMobile(context)
-                      ? height * 0.015
+                      ? height * 0.005
                       : height * .03,
                   left: width * 0.015,
                   child: Column(
@@ -243,10 +243,10 @@ class ActivityScreen extends StatelessWidget {
                       SizedBox(
                         height: Responsive.isTablet(context) ? 1 : 5,
                       ),
-                      const Text(
+                      Text(
                         "1,344,907",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.tertiary,
                           fontSize: 12,
                         ),
                       ),

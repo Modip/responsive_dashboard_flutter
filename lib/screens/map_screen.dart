@@ -17,7 +17,8 @@ class MapScreen extends StatelessWidget {
           instructions: SMapWorld.instructions,
 
           // Default color for all countries.
-          defaultColor: Colors.white,
+
+          defaultColor: Theme.of(context).colorScheme.tertiary,
 
           // Matching class to specify custom colors for each area.
           colors: const SMapWorldColors(
@@ -32,9 +33,7 @@ class MapScreen extends StatelessWidget {
           ).toMap(),
 
           // Details of what area is being touched, giving you the ID, name and tapdetails
-          callback: (id, name, tapdetails) {
-            print(name);
-          },
+          callback: (id, name, tapdetails) {},
         )));
   }
 }

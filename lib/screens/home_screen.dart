@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       drawer: !isDesktop
           ? const SizedBox(
               width: 200,

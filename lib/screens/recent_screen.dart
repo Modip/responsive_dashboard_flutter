@@ -15,7 +15,7 @@ class RecentScreen extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: kPrimaryColor,
+          color: Theme.of(context).colorScheme.primary,
         ),
         height: height * .08,
         child: Row(
@@ -33,8 +33,8 @@ class RecentScreen extends StatelessWidget {
             ),
             Text(
               activity.date,
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.tertiary,
                 fontSize: 12,
               ),
             ),
@@ -42,8 +42,8 @@ class RecentScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 activity.value,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.tertiary,
                   fontSize: 12,
                 ),
               ),

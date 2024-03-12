@@ -24,17 +24,17 @@ class FooterScreen extends StatelessWidget {
             margin: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: kPrimaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
             child: Stack(
               children: [
                 Positioned(
                   top: height * 0.015,
                   left: width * 0.015,
-                  child: const Text(
+                  child: Text(
                     "Compaign",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.tertiary,
                       fontSize: 14,
                     ),
                   ),
@@ -43,26 +43,26 @@ class FooterScreen extends StatelessWidget {
                   top: height * 0.09,
                   left: width * 0.01,
                   right: width * 0.01,
-                  child: const Column(
+                  child: Column(
                     children: [
-                      Chart(),
-                      SizedBox(
+                      const Chart(),
+                      const SizedBox(
                         height: 40,
                       ),
-                      Text(
+                      const Text(
                         "\$99.345 Genereted",
                         style: TextStyle(
                           color: kGreenColor,
                           fontSize: 12,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(
                         "Include extra musc and expendatables costs",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.tertiary,
                           fontSize: 12,
                         ),
                       ),
@@ -76,17 +76,17 @@ class FooterScreen extends StatelessWidget {
             margin: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: kPrimaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
             child: Stack(
               children: [
                 Positioned(
                   top: height * 0.015,
                   left: width * 0.015,
-                  child: const Text(
+                  child: Text(
                     "Sales Quantities",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.tertiary,
                       fontSize: 14,
                     ),
                   ),
@@ -104,17 +104,17 @@ class FooterScreen extends StatelessWidget {
             margin: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: kPrimaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
             child: Stack(
               children: [
                 Positioned(
                   top: height * 0.015,
                   left: width * 0.015,
-                  child: const Text(
+                  child: Text(
                     "Geography Based Traffic ",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.tertiary,
                       fontSize: 14,
                     ),
                   ),

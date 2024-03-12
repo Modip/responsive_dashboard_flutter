@@ -16,12 +16,12 @@ class ChartCard extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 12.0, top: 8),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0, top: 8),
                 child: Text(
                   "Revenu Genereted",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.tertiary,
                     fontSize: 14,
                   ),
                 ),
@@ -48,8 +48,10 @@ class ChartCard extends StatelessWidget {
                                         child: Text(
                                           data.bottomTile[value.toInt()]
                                               .toString(),
-                                          style: const TextStyle(
-                                              color: Colors.white,
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .tertiary,
                                               fontSize: 10),
                                         ),
                                       )
@@ -68,8 +70,10 @@ class ChartCard extends StatelessWidget {
                                         child: Text(
                                           data.leftTile[value.toInt()]
                                               .toString(),
-                                          style: const TextStyle(
-                                              color: Colors.white,
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .tertiary,
                                               fontSize: 10),
                                         ))
                                     : const SizedBox();
@@ -108,12 +112,12 @@ class ChartCard extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 12.0, top: 8),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0, top: 8),
                 child: Text(
                   "Revenu Genereted",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.tertiary,
                     fontSize: 14,
                   ),
                 ),
@@ -140,8 +144,10 @@ class ChartCard extends StatelessWidget {
                                         child: Text(
                                           data.bottomTile[value.toInt()]
                                               .toString(),
-                                          style: const TextStyle(
-                                              color: Colors.white,
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .tertiary,
                                               fontSize: 10),
                                         ),
                                       )
@@ -160,8 +166,10 @@ class ChartCard extends StatelessWidget {
                                         child: Text(
                                           data.leftTile[value.toInt()]
                                               .toString(),
-                                          style: const TextStyle(
-                                              color: Colors.white,
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .tertiary,
                                               fontSize: 10),
                                         ))
                                     : const SizedBox();
@@ -200,12 +208,12 @@ class ChartCard extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 12.0, top: 8),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0, top: 8),
                 child: Text(
                   "Revenu Genereted",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.tertiary,
                     fontSize: 14,
                   ),
                 ),
@@ -232,8 +240,10 @@ class ChartCard extends StatelessWidget {
                                         child: Text(
                                           data.bottomTile[value.toInt()]
                                               .toString(),
-                                          style: const TextStyle(
-                                              color: Colors.white,
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .tertiary,
                                               fontSize: 10),
                                         ),
                                       )
@@ -252,8 +262,10 @@ class ChartCard extends StatelessWidget {
                                         child: Text(
                                           data.leftTile[value.toInt()]
                                               .toString(),
-                                          style: const TextStyle(
-                                              color: Colors.white,
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .tertiary,
                                               fontSize: 10),
                                         ))
                                     : const SizedBox();
